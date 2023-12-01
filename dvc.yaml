@@ -1,0 +1,31 @@
+vars:
+  - output_path: './data/output'
+  - input_path: './data/input'
+
+stages:
+  prepare_data:
+    cmd: python ./scripts/prepare_data.py 
+    deps:
+      - ./scripts/prepare_data.py
+      - ${input_path}/target.csv
+    params:
+      - grid
+    outs:
+      - ${output_path}/prepare_data/0_target.csv
+      - ${output_path}/prepare_data/1_target.csv
+      - ${output_path}/prepare_data/2_target.csv
+      - ${output_path}/prepare_data/3_target.csv
+
+  train:
+    foreach: ${stages.train}
+    do:
+      cmd: python ./scripts/train.py ${item}
+      deps:
+        - ./scripts/train.py
+        - ${input_path}/features.csv
+        - ${item.labels_path}
+        - ${item.data_path}
+      outs:
+        - ${item.model_path}
+      metrics:
+        - ${item.metrics_path}
