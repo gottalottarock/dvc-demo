@@ -1,0 +1,4 @@
+['remote "myremote"']
+    url = /home/stepan/projects/bg/bioinf/dvc-demo/dvc-cache
+[core]
+    remote = myremote
