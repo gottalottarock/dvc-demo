@@ -36,7 +36,7 @@ stages:
       md5: 223bb9884b9938465c1d69b76fbf1f09
       size: 3409
   train@0:
-    cmd: python ./scripts/train.py --max_depth 5 --labels_path data/output/prepare_data/0_target.csv
+    cmd: python scripts/train.py --max_depth 5 --labels_path data/output/prepare_data/0_target.csv
       --data_path data/input/features.csv --model_path data/output/models/0_model.pickle
       --metrics_path data/output/metrics/0_metrics.yaml
     deps:
@@ -44,10 +44,6 @@ stages:
       hash: md5
       md5: 4897a53a13996d85c8cc252a36e1f3d5
       size: 59816
-    - path: ./scripts/train.py
-      hash: md5
-      md5: a006399cb767a1d24689fb4cbe6db485
-      size: 2302
     - path: data/input/features.csv
       hash: md5
       md5: 4897a53a13996d85c8cc252a36e1f3d5
@@ -56,17 +52,21 @@ stages:
       hash: md5
       md5: 7a7fcf621ef5cf3e5e06347ec9365b50
       size: 3409
+    - path: scripts/train.py
+      hash: md5
+      md5: a006399cb767a1d24689fb4cbe6db485
+      size: 2302
     outs:
     - path: data/output/metrics/0_metrics.yaml
       hash: md5
-      md5: 928eddc9fdbec885dbc2f9daeb9a603e
-      size: 95
+      md5: 0c1517d9484e71a6a5efd1aae7768ee3
+      size: 96
     - path: data/output/models/0_model.pickle
       hash: md5
-      md5: b33c584262d6a6b8f3cc3dda2c760030
+      md5: c2069e2757f7664adc312d0ccced8a8e
       size: 3126
   train@1:
-    cmd: python ./scripts/train.py --max_depth 5 --labels_path data/output/prepare_data/1_target.csv
+    cmd: python scripts/train.py --max_depth 5 --labels_path data/output/prepare_data/1_target.csv
       --data_path data/input/features.csv --model_path data/output/models/1_model.pickle
       --metrics_path data/output/metrics/1_metrics.yaml
     deps:
@@ -74,10 +74,6 @@ stages:
       hash: md5
       md5: 4897a53a13996d85c8cc252a36e1f3d5
       size: 59816
-    - path: ./scripts/train.py
-      hash: md5
-      md5: a006399cb767a1d24689fb4cbe6db485
-      size: 2302
     - path: data/input/features.csv
       hash: md5
       md5: 4897a53a13996d85c8cc252a36e1f3d5
@@ -86,6 +82,10 @@ stages:
       hash: md5
       md5: e4dcebce4955ce047ed9387591dc59c9
       size: 3409
+    - path: scripts/train.py
+      hash: md5
+      md5: a006399cb767a1d24689fb4cbe6db485
+      size: 2302
     outs:
     - path: data/output/metrics/1_metrics.yaml
       hash: md5
@@ -93,10 +93,10 @@ stages:
       size: 66
     - path: data/output/models/1_model.pickle
       hash: md5
-      md5: 4f165953fdb6df0eb1f810e722fd1387
+      md5: f9e4a40d7b4b3f7ce104c0718d51ce9e
       size: 2486
   train@2:
-    cmd: python ./scripts/train.py --max_depth 10 --labels_path data/output/prepare_data/2_target.csv
+    cmd: python scripts/train.py --max_depth 20 --labels_path data/output/prepare_data/2_target.csv
       --data_path data/input/features.csv --model_path data/output/models/2_model.pickle
       --metrics_path data/output/metrics/2_metrics.yaml
     deps:
@@ -104,10 +104,6 @@ stages:
       hash: md5
       md5: 4897a53a13996d85c8cc252a36e1f3d5
       size: 59816
-    - path: ./scripts/train.py
-      hash: md5
-      md5: a006399cb767a1d24689fb4cbe6db485
-      size: 2302
     - path: data/input/features.csv
       hash: md5
       md5: 4897a53a13996d85c8cc252a36e1f3d5
@@ -116,17 +112,21 @@ stages:
       hash: md5
       md5: 09c0bd27c1f6beb00c6cc2c04cc12592
       size: 3409
+    - path: scripts/train.py
+      hash: md5
+      md5: a006399cb767a1d24689fb4cbe6db485
+      size: 2302
     outs:
     - path: data/output/metrics/2_metrics.yaml
       hash: md5
-      md5: 8ecd57209b39eace496309b505cc360d
-      size: 97
+      md5: 4d474cf1c8d5207a5842c6123f0c888a
+      size: 86
     - path: data/output/models/2_model.pickle
       hash: md5
-      md5: 5e66b4a0a97ab5585d304d355c9b1fe6
+      md5: c451f995f298aab07c8561605db3a338
       size: 3766
   train@3:
-    cmd: python ./scripts/train.py --max_depth 10 --labels_path data/output/prepare_data/3_target.csv
+    cmd: python scripts/train.py --max_depth 20 --labels_path data/output/prepare_data/3_target.csv
       --data_path data/input/features.csv --model_path data/output/models/3_model.pickle
       --metrics_path data/output/metrics/3_metrics.yaml
     deps:
@@ -134,10 +134,6 @@ stages:
       hash: md5
       md5: 4897a53a13996d85c8cc252a36e1f3d5
       size: 59816
-    - path: ./scripts/train.py
-      hash: md5
-      md5: a006399cb767a1d24689fb4cbe6db485
-      size: 2302
     - path: data/input/features.csv
       hash: md5
       md5: 4897a53a13996d85c8cc252a36e1f3d5
@@ -146,12 +142,16 @@ stages:
       hash: md5
       md5: 223bb9884b9938465c1d69b76fbf1f09
       size: 3409
+    - path: scripts/train.py
+      hash: md5
+      md5: a006399cb767a1d24689fb4cbe6db485
+      size: 2302
     outs:
     - path: data/output/metrics/3_metrics.yaml
       hash: md5
-      md5: b09fafdaf1afc77979c5a1dffc9327c3
-      size: 83
+      md5: bae677d9021ffda927ce131b35943e60
+      size: 92
     - path: data/output/models/3_model.pickle
       hash: md5
-      md5: 16862e8d05baa4d9b4c9add6799d9901
+      md5: c2c18f7a50df4864a96e9f622d1a0e9c
       size: 4246
