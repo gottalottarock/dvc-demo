@@ -19,13 +19,13 @@ stages:
   train:
     foreach: ${stages.train}
     do:
-      cmd: python ./scripts/train.py ${item}
+      cmd: python ${item.script} ${item.params}
       deps:
-        - ./scripts/train.py
+        - ${item.script}
         - ${input_path}/features.csv
-        - ${item.labels_path}
-        - ${item.data_path}
+        - ${item.params.labels_path}
+        - ${item.params.data_path}
       outs:
-        - ${item.model_path}
+        - ${item.params.model_path}
       metrics:
-        - ${item.metrics_path}
+        - ${item.params.metrics_path}
