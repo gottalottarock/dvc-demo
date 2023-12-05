@@ -126,9 +126,9 @@ stages:
       md5: c451f995f298aab07c8561605db3a338
       size: 3766
   train@3:
-    cmd: python scripts/train.py --max_depth 20 --labels_path data/output/prepare_data/3_target.csv
-      --data_path data/input/features.csv --model_path data/output/models/3_model.pickle
-      --metrics_path data/output/metrics/3_metrics.yaml
+    cmd: python scripts/train_random_forest.py --max_depth 5 --n_estimators 30 --labels_path
+      data/output/prepare_data/3_target.csv --data_path data/input/features.csv --model_path
+      data/output/models/3_model.pickle --metrics_path data/output/metrics/3_metrics.yaml
     deps:
     - path: ./data/input/features.csv
       hash: md5
@@ -142,16 +142,16 @@ stages:
       hash: md5
       md5: 223bb9884b9938465c1d69b76fbf1f09
       size: 3409
-    - path: scripts/train.py
+    - path: scripts/train_random_forest.py
       hash: md5
-      md5: a006399cb767a1d24689fb4cbe6db485
-      size: 2302
+      md5: b87ee6ce1dc931f71723614e44ed0a32
+      size: 2313
     outs:
     - path: data/output/metrics/3_metrics.yaml
       hash: md5
-      md5: bae677d9021ffda927ce131b35943e60
-      size: 92
+      md5: bdba25dee9e172877af9541bcfd97ac0
+      size: 94
     - path: data/output/models/3_model.pickle
       hash: md5
-      md5: c2c18f7a50df4864a96e9f622d1a0e9c
-      size: 4246
+      md5: 1edecbc526b25c60b3e6ba7a7d9d15c7
+      size: 209123

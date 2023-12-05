@@ -31,9 +31,10 @@ stages:
         model_path: 'data/output/models/2_model.pickle'
         metrics_path: 'data/output/metrics/2_metrics.yaml'
     '3':
-      script: scripts/train.py
+      script: scripts/train_random_forest.py
       params:
-        max_depth: 20
+        max_depth: 5
+        n_estimators: 30
         labels_path: 'data/output/prepare_data/3_target.csv'
         data_path: 'data/input/features.csv'
         model_path: 'data/output/models/3_model.pickle'
